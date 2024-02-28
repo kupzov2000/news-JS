@@ -5,10 +5,13 @@ interface ItemSources {
     id: string;
 }
 
-interface DataSources extends Array<ItemSources> {}
+// interface DataSources extends Array<ItemSources> {}
+interface DataSources {
+    sources: ItemSources[];
+}
 
 class Sources {
-    draw(data: DataSources) {
+    draw(data: DataSources['sources']) {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp: HTMLTemplateElement | null = document.querySelector('#sourceItemTemp');
 

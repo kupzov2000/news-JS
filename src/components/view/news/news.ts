@@ -12,10 +12,13 @@ interface DataItem {
     url: string;
 }
 
-interface DataNews extends Array<DataItem> {}
+// interface DataNews extends Array<DataItem> {}
+interface DataNews /*extends Array<DataItem>*/ {
+    articles: DataItem[];
+}
 
 class News {
-    draw(data: DataNews) {
+    draw(data: DataNews['articles']) {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
