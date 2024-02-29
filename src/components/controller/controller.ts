@@ -2,7 +2,7 @@ import { DataVoid } from '../../types/index';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    getSources(callback: DataVoid): void {
+    public getSources(callback: DataVoid): void {
         if (callback === undefined) throw new Error('Error. ');
 
         super.getResp(
@@ -13,7 +13,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: DataVoid) {
+    public getNews(e: Event, callback: DataVoid) {
         if (callback === undefined) throw new Error('Error. ');
 
         let target = e.target as HTMLElement;
