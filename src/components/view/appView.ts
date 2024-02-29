@@ -14,7 +14,7 @@ interface DataItem {
 }
 
 interface DataDrawNews {
-    articles?: DataItem[];
+    articles: DataItem[];
 }
 
 interface ItemSources {
@@ -23,7 +23,7 @@ interface ItemSources {
 }
 
 interface DataSources {
-    sources?: ItemSources[];
+    sources: ItemSources[];
 }
 
 export class AppView {
