@@ -1,10 +1,9 @@
+import { DataVoid } from '../../types/index';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    // ЕСЛИ ОШИБКИ, ТО ПОМЕНЯЙ callback типизацию
-    getSources(callback: void): void {
+    getSources(callback: DataVoid): void {
         if (callback === undefined) throw new Error('Error. ');
-        console.log(callback);
 
         super.getResp(
             {
@@ -14,7 +13,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: void) {
+    getNews(e: Event, callback: DataVoid) {
         if (callback === undefined) throw new Error('Error. ');
 
         let target = e.target as HTMLElement;

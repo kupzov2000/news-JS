@@ -1,14 +1,5 @@
+import { DataSources } from '../../../types/index';
 import './sources.css';
-
-interface ItemSources {
-    name: string;
-    id: string;
-}
-
-// interface DataSources extends Array<ItemSources> {}
-interface DataSources {
-    sources: ItemSources[];
-}
 
 class Sources {
     draw(data: DataSources['sources']) {
@@ -23,13 +14,11 @@ class Sources {
             if (sourceItemName instanceof HTMLElement) {
                 sourceItemName.textContent = item.name;
             }
-            // sourceClone.querySelector('.source__item-name').textContent = item.name;
 
             const sourceItem = sourceClone.querySelector('.source__item');
             if (sourceItem instanceof HTMLElement) {
                 sourceItem.setAttribute('data-source-id', item.id);
             }
-            // sourceClone.querySelector('.source__item').setAttribute('data-source-id', item.id);
 
             fragment.append(sourceClone);
         });
@@ -38,7 +27,6 @@ class Sources {
         if (documentSources instanceof HTMLElement) {
             documentSources.append(fragment);
         }
-        // document.querySelector('.sources').append(fragment);
     }
 }
 

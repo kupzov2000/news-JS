@@ -1,13 +1,4 @@
-interface OptionsApi {
-    [key: string]: string;
-}
-
-interface ResData<T> {
-    ok: boolean;
-    status: number;
-    statusText: string;
-    json(): Promise<T>;
-}
+import { OptionsApi, ResData } from '../../types/index';
 
 class Loader {
     baseLink: string;
@@ -24,7 +15,6 @@ class Loader {
             console.error('No callback for GET response');
         }
     ) {
-        // console.log(endpoint);
         this.load('GET', endpoint, callback, options);
     }
 
